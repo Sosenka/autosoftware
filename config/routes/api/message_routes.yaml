@@ -1,0 +1,4 @@
+create_message:
+  path: /
+  controller: App\ApiBundle\Controller\MessageController::createMessageAction
+  methods: [GET, POST]

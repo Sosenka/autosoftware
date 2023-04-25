@@ -1,0 +1,4 @@
+message_routes:
+  prefix: /message
+  resource: "api/message_routes.yaml"
+  trailing_slash_on_root: false

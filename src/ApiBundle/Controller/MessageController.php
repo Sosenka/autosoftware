@@ -45,6 +45,10 @@ class MessageController extends BaseController
 
         $message = $this->fileFactory->getMessageFromFile($payload);
 
-        return new JsonResponse($this->serializationService->normalize(['message' => $message->getMessage()]), Response::HTTP_OK);
+        if ($message) {
+            return new JsonResponse($this->serializationService->normalize(['message' => $message->getMessage()]), Response::HTTP_OK);
+
+        }
+        return new JsonResponse($this->serializationService->normalize(["message" => "Not Found"]), Response::HTTP_NOT_FOUND);
     }
 }

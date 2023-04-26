@@ -68,9 +68,6 @@ class ApiSubscriber implements EventSubscriberInterface
             $this->logger->warning("Error response", ['message' => 'JSON '.$exception->getMessage()]);
         }
         if ($exception instanceof HttpException) {
-            if ($this->isAdminSite($event->getRequest())) { //error twig template here for admin
-                return;
-            }
             $response = new ApiJsonResponseError(
                 $exception->getMessage(),
                 $this->getMessages($exception->getStatusCode()),
@@ -168,14 +165,5 @@ class ApiSubscriber implements EventSubscriberInterface
     private function isApiSite(Request $request): bool
     {
         return false !== stripos($request->getPathInfo(), '/api');
-    }
-
-    /**
-     * @param Request $request
-     * @return bool
-     */
-    private function isAdminSite(Request $request): bool
-    {
-        return false !== stripos($request->getPathInfo(), '/admin');
     }
 }

@@ -19,7 +19,7 @@ docker compose up
 docker compose exec web sh
 ```
 5. zainstaluj paczki composera
-```angular2html
+```
 composer install
 ```
 

@@ -25,4 +25,20 @@ class ValidationException extends \Exception
             'field' => $this->field
         ];
     }
+
+    /**
+     * @return string
+     */
+    public function getField(): string
+    {
+        return $this->field;
+    }
+
+    /**
+     * @param string $field
+     */
+    public function setField(string $field): void
+    {
+        $this->field = $field;
+    }
 }

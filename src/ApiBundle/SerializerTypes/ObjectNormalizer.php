@@ -41,7 +41,6 @@ class ObjectNormalizer extends BaseSerializer
             $context->setGroups($this->groups);
         }
 
-
         foreach ($this->exclusionStrategies as $exclusionStrategy) {
             $context->addExclusionStrategy($exclusionStrategy);
         }

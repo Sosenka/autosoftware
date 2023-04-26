@@ -5,30 +5,32 @@ namespace App\ApiBundle\Payload;
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class CreateMessageRequest
+class GetMessageRequest
 {
     /**
      * @Serializer\Type("string")
      * @Assert\Type("string")
-     * @Assert\NotBlank(message="proszę podać wiadomość")
+     * @Assert\NotBlank(message="Proszę podać uuid")
      */
-    protected $message;
+    protected $uuid;
 
     /**
      * @return mixed
      */
-    public function getMessage()
+    public function getUuid()
     {
-        return $this->message;
+        return $this->uuid;
     }
 
     /**
-     * @param mixed $message
+     * @param mixed $uuid
      */
-    public function setMessage($message): void
+    public function setUuid($uuid): void
     {
-        $this->message = $message;
+        $this->uuid = $uuid;
     }
+
+
 
 
 }

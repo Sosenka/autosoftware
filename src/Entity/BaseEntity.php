@@ -94,7 +94,7 @@ class BaseEntity
      * @PreUpdate
      * @PrePersist
      */
-    final function update()
+    final function update(): void
     {
         if ($this->getCreated() == null) {
             $this->setCreated(new \DateTime());
